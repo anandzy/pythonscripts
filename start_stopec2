@@ -6,7 +6,7 @@ import boto.ec2
 import sys
 
 # specify AWS keys
-auth = {"aws_access_key_id": "<key_id>", "aws_secret_access_key": "<access_key>"}
+auth = {"aws_access_key_id": "<AKIAIPK46IRCNI5VLMOQ>", "aws_secret_access_key": "<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>"}
 
 def main():
     # read arguments from the command line and 
@@ -27,9 +27,9 @@ def main():
 def startInstance():
     print "Starting the instance..."
 
-    # change "eu-west-1" region if different
+    # change "us-east-1d" region if different
     try:
-        ec2 = boto.ec2.connect_to_region("eu-west-1", **auth)
+        ec2 = boto.ec2.connect_to_region("us-east-1d", **auth)
 
     except Exception, e1:
         error1 = "Error1: %s" % str(e1)
@@ -38,7 +38,7 @@ def startInstance():
 
     # change instance ID appropriately  
     try:
-         ec2.start_instances(instance_ids="i-12345678")
+         ec2.start_instances(instance_ids="i-02780e34d7b139e9b")
 
     except Exception, e2:
         error2 = "Error2: %s" % str(e2)
@@ -49,7 +49,7 @@ def stopInstance():
     print "Stopping the instance..."
 
     try:
-        ec2 = boto.ec2.connect_to_region("eu-west-1", **auth)
+        ec2 = boto.ec2.connect_to_region("us-east-1d", **auth)
 
     except Exception, e1:
         error1 = "Error1: %s" % str(e1)
@@ -57,7 +57,7 @@ def stopInstance():
         sys.exit(0)
 
     try:
-         ec2.stop_instances(instance_ids="i-12345678")
+         ec2.stop_instances(instance_ids="i-02780e34d7b139e9b")
 
     except Exception, e2:
         error2 = "Error2: %s" % str(e2)
