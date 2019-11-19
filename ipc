@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo 'This takes sometime to complete, Thanks for patience!'
+local-ips | grep '1 received' -c

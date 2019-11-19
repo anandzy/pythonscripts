@@ -1,0 +1,11 @@
+#!/usr/bin/python
+
+#package = pip install forex-python
+
+import forex_python.converter
+
+from forex_python.converter import CurrencyRates
+c = CurrencyRates()
+d = c.get_rate('SEK', 'INR')
+
+print(d)
